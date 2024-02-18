@@ -13,7 +13,7 @@ type ChainAddresses = {
   v1MixedRouteQuoterAddress?: string
 }
 
-const DEFAULT_NETWORKS = [ChainId.MAINNET, ChainId.GOERLI, ChainId.SEPOLIA]
+const DEFAULT_NETWORKS = [ChainId.MAINNET, ChainId.GOERLI, ChainId.SEPOLIA, ChainId.BLAST_SEPOLIA]
 
 function constructSameAddressMap(address: string, additionalNetworks: ChainId[] = []): AddressMap {
   return DEFAULT_NETWORKS.concat(additionalNetworks).reduce<AddressMap>((memo, chainId) => {
@@ -35,7 +35,7 @@ export const UNISWAP_NFT_AIRDROP_CLAIM_ADDRESS = '0x8B799381ac40b838BBA4131ffB26
 /**
  * @deprecated use V2_FACTORY_ADDRESSES instead
  */
-export const V2_FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
+export const V2_FACTORY_ADDRESS = '0xE63D69fFdB211dD747ad8970544043fADE7d20f5'
 export const V2_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.MAINNET]: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f',
   [ChainId.GOERLI]: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f',
@@ -46,12 +46,13 @@ export const V2_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.BASE]: '0x8909dc15e40173ff4699343b6eb8132c65e18ec6',
   [ChainId.BNB]: '0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6',
   [ChainId.POLYGON]: '0x9e5A52f57b3038F1B8EeE45F28b3C1967e22799C',
-  [ChainId.CELO]: '0x79a530c8e2fA8748B7B40dd3629C0520c2cCf03f'
+  [ChainId.CELO]: '0x79a530c8e2fA8748B7B40dd3629C0520c2cCf03f',
+  [ChainId.BLAST_SEPOLIA]: '0x00F3580ABA2eb5D7b4e5a11d1b60dC4cD32B29b3'
 }
 /**
  * @deprecated use V2_ROUTER_ADDRESSES instead
  */
-export const V2_ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
+export const V2_ROUTER_ADDRESS = '0xdd9501781fa1c77584B0c55e0e68607AF3c35840'
 export const V2_ROUTER_ADDRESSES: AddressMap = {
   [ChainId.MAINNET]: '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
   [ChainId.GOERLI]: '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
@@ -61,7 +62,8 @@ export const V2_ROUTER_ADDRESSES: AddressMap = {
   [ChainId.BASE]: '0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24',
   [ChainId.AVALANCHE]: '0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24',
   [ChainId.BNB]: '0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24',
-  [ChainId.POLYGON]: '0xedf6066a2b290c185783862c7f4776a2c8077ad1'
+  [ChainId.POLYGON]: '0xedf6066a2b290c185783862c7f4776a2c8077ad1',
+  [ChainId.BLAST_SEPOLIA]: '0xdd9501781fa1c77584B0c55e0e68607AF3c35840'
 }
 
 // Networks that share most of the same addresses i.e. Mainnet, Goerli, Optimism, Arbitrum, Polygon
@@ -192,6 +194,17 @@ const BASE_GOERLI_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x8357227D4eDc78991Db6FDB9bD6ADE250536dE1d'
 }
 
+// Blast Sepolia v3 addresses
+const BLAST_SEPOLIA_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xbAB2F66B5B3Be3cC158E3aC1007A8DF0bA5d67F4',
+  multicallAddress: '0xE535A10FC427513716304F8b717Db34edDeD4A04',
+  quoterAddress: '0xA1CeB6084691C10401BC1Abc954918703662ab32',
+  v3MigratorAddress: '0xB82cE774FDB825e73ABB3D2b246B218a3251302D',
+  nonfungiblePositionManagerAddress: '0xa4b568bCdeD46bB8F84148fcccdeA37e262A3848',
+  tickLensAddress: '0x3B993E5cE12F99cB532cC0E50EB411bB57a06766',
+  swapRouter02Address: '0xF339F231678e738c4D553e6b60305b852a4C526B'
+}
+
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
   [ChainId.MAINNET]: MAINNET_ADDRESSES,
   [ChainId.OPTIMISM]: OPTIMISM_ADDRESSES,
@@ -209,7 +222,8 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.SEPOLIA]: SEPOLIA_ADDRESSES,
   [ChainId.AVALANCHE]: AVALANCHE_ADDRESSES,
   [ChainId.BASE]: BASE_ADDRESSES,
-  [ChainId.BASE_GOERLI]: BASE_GOERLI_ADDRESSES
+  [ChainId.BASE_GOERLI]: BASE_GOERLI_ADDRESSES,
+  [ChainId.BLAST_SEPOLIA]: BLAST_SEPOLIA_ADDRESSES
 }
 
 /* V3 Contract Addresses */

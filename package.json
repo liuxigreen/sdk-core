@@ -1,16 +1,16 @@
 {
-  "name": "@uniswap/sdk-core",
+  "name": "@monoswap-labs/sdk-core",
   "license": "MIT",
-  "version": "4.1.2",
-  "description": "⚒️ An SDK for building applications on top of Uniswap V3",
+  "version": "3.0.0",
+  "description": "⚒️ An SDK for building applications on top of Monoswap V3",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/Uniswap/uniswap-sdk-core.git",
+  "repository": "https://github.com/Monoswap-labs/sdk-core.git",
   "keywords": [
-    "uniswap",
+    "monoswap",
     "ethereum"
   ],
   "module": "dist/sdk-core.esm.js",
